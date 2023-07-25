@@ -1,0 +1,10 @@
+<!-- <p *ngFor="let task of tasks">{{ task.text }}</p> -->
+
+<!-- task of the specific iteration -->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)"
+></app-task-item>
